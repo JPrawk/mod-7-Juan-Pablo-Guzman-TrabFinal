@@ -17,11 +17,9 @@ export const TaskPage = () => {
   const [loading, setLoading] = useState(true);
   const [newTaskName, setNewTaskName] = useState('');
   const [creating, setCreating] = useState(false);
-
   const [editOpen, setEditOpen] = useState(false);
   const [editTask, setEditTask] = useState<Task | null>(null);
   const [editName, setEditName] = useState('');
-
   const [deleteOpen, setDeleteOpen] = useState(false);
   const [deleteTask_, setDeleteTask_] = useState<Task | null>(null);
 
@@ -100,11 +98,10 @@ export const TaskPage = () => {
 
   return (
     <Box sx={{ maxWidth: 700, mx: 'auto', p: 2 }}>
-      <Typography variant="h5" fontWeight={600} mb={3}>
+      <Typography variant="h5" sx={{ fontWeight: 600, mb: 3 }}>
         Mis Tareas
       </Typography>
 
-      {/* Formulario crear tarea */}
       <Box sx={{ display: 'flex', gap: 1, mb: 4 }}>
         <TextField
           fullWidth
@@ -130,12 +127,11 @@ export const TaskPage = () => {
         </Box>
       ) : (
         <>
-          {/* Tareas pendientes */}
-          <Typography variant="subtitle1" fontWeight={500} mb={1}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 500, mb: 1 }}>
             Pendientes ({pending.length})
           </Typography>
           {pending.length === 0 && (
-            <Typography variant="body2" color="text.secondary" mb={2}>
+            <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2 }}>
               No hay tareas pendientes
             </Typography>
           )}
@@ -151,12 +147,11 @@ export const TaskPage = () => {
 
           <Divider sx={{ my: 3 }} />
 
-          {/* Tareas finalizadas */}
-          <Typography variant="subtitle1" fontWeight={500} mb={1}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 500, mb: 1 }}>
             Finalizadas ({done.length})
           </Typography>
           {done.length === 0 && (
-            <Typography variant="body2" color="text.secondary" mb={2}>
+            <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2 }}>
               No hay tareas finalizadas
             </Typography>
           )}
@@ -172,7 +167,6 @@ export const TaskPage = () => {
         </>
       )}
 
-      {/* Dialog editar */}
       <Dialog open={editOpen} onClose={() => setEditOpen(false)} fullWidth maxWidth="sm">
         <DialogTitle>Editar tarea</DialogTitle>
         <DialogContent>
@@ -194,7 +188,6 @@ export const TaskPage = () => {
         </DialogActions>
       </Dialog>
 
-      {/* Dialog eliminar */}
       <Dialog open={deleteOpen} onClose={() => setDeleteOpen(false)}>
         <DialogTitle>Eliminar tarea</DialogTitle>
         <DialogContent>
