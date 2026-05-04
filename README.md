@@ -1,73 +1,58 @@
-# React + TypeScript + Vite
+# Gestión de Tareas — Módulo 7 Full Stack USIP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web para gestionar el ciclo de vida completo de tareas personales.
 
-Currently, two official plugins are available:
+## Tecnologías
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19 + Vite + TypeScript
+- Material UI (MUI) v9
+- React Router v7
+- Axios
+- GitHub Pages
 
-## React Compiler
+## Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Registro e inicio de sesión con JWT
+- Visualización de tareas separadas por estado
+- Creación de nuevas tareas
+- Edición del nombre de una tarea
+- Eliminación de tareas
+- Cambio de estado entre Pendiente y Finalizada
 
-## Expanding the ESLint configuration
+## Demo
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+[https://jprawk.github.io/mod-7-Juan-Pablo-Guzman-TrabFinal/](https://jprawk.github.io/mod-7-Juan-Pablo-Guzman-TrabFinal/)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Backend
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+[https://taskdone-node.onrender.com](https://taskdone-node.onrender.com)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+API Docs: [https://taskdone-node.onrender.com/api-docs](https://taskdone-node.onrender.com/api-docs)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Instalación local
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Clonar el repositorio
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+git clone https://github.com/JPrawk/mod-7-Juan-Pablo-Guzman-TrabFinal.git
+
+2. Instalar dependencias
+
+npm install
+
+3. Configurar variables de entorno
+
+Crear archivo `.env` en la raíz con:
+
+VITE_API_URL=https://taskdone-node.onrender.com/api
+
+4. Ejecutar en desarrollo
+
+npm run dev
+
+5. Deploy en GitHub Pages
+
+npm run deploy
+
+## Autor
+
+Juan Pablo Guzman — Diplomado Full Stack USIP — Módulo 7
